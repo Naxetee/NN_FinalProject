@@ -4,10 +4,18 @@ import time
 import hydra
 
 
-@hydra.main(config_path="./configs/", config_name="global_optim_config.yaml")
+@hydra.main(config_path="./configs/", config_name="global_optim_config.yaml", version_base=None)
 def main(cfg):
+
     torch.manual_seed(cfg.seed)
-    params = torch.rand(2)
+    DEVICE = torch.device(f"cuda:0" if torch.cuda.is_available() else "cpu")
+    if torch.cuda.is_available():
+        print("Using ", torch.cuda.get_device_name())
+        params = torch.rand(2).to(DEVICE)
+    else:
+        print("Using CPU")
+        params = torch.rand(2).to(DEVICE)
+        
     t_total = 0
     for iteration in range(cfg.iterations):
         t0 = time.perf_counter()

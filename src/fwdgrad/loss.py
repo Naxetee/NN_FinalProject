@@ -3,8 +3,8 @@ from typing import Callable, Tuple
 import torch
 from torch.nn import functional as F
 
-from fwdgrad.activation import softmax
-from fwdgrad.utils import clamp_probs
+from src.fwdgrad.activation import softmax
+from src.fwdgrad.utils import clamp_probs
 
 
 def _xent(x: torch.Tensor, t: torch.Tensor, num_classes: int = 10) -> torch.Tensor:
@@ -65,3 +65,4 @@ def functional_xent(
     """
     y = model(params, x)
     return _xent(y, t, num_classes)
+    

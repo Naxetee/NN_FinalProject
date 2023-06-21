@@ -1,6 +1,0 @@
-function:
-  _target_: fwdgrad.global_optim_functions.rosenbrock
-  _partial_: true
-seed: 42
-learning_rate: 0.001
-iterations: 5000

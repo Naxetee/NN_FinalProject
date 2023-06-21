@@ -140,7 +140,7 @@ hydra:
     - path: ''
       schema: structured
       provider: schema
-    output_dir: c:\Users\naxet\NN_FinalProject\outputs\2023-04-11\22-05-24
+    output_dir: c:\Users\naxet\NN_FinalProject\outputs\2023-06-21\11-27-58
     choices:
       hydra/env: default
       hydra/callbacks: null
